@@ -1,4 +1,4 @@
-# CorpVision Dashboard
+# FinanceCorp Dashboard
 
 Dashboard corporativo desenvolvido com Angular.
 
