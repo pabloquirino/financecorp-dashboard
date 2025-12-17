@@ -1,0 +1,17 @@
+.layout {
+  display: flex;
+  height: 100vh;
+  background-color: #f5f6fa;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.page {
+  flex: 1;
+  padding: 24px;
+  overflow: auto;
+}
