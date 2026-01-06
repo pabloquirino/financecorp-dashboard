@@ -9,5 +9,12 @@
     <button mat-icon-button>
       <mat-icon>account_circle</mat-icon>
     </button>
+    
+    <button
+      mat-icon-button
+      *ngIf="authStore.isAuthenticated()"
+      (click)="logout()">
+      <mat-icon>logout</mat-icon>
+    </button>
   </div>
 </header>

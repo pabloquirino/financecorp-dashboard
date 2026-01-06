@@ -52,4 +52,5 @@ export class AuthService {
 
     return of(user).pipe(delay(800));
   }
+
 }

@@ -16,9 +16,11 @@
       routerLink="/users"
       routerLinkActive="active"
       class="menu-item"
+      *ngIf="authStore.role() === 'ADMIN'"
     >
       Usuários
     </a>
+    
 
     <a
       routerLink="/reports"

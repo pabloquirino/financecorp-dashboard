@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { AuthStore } from '../../auth/auth.store';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,5 +9,5 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
-
+  constructor(public authStore: AuthStore) { }
 }

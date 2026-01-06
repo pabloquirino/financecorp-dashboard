@@ -1,9 +1,14 @@
 import { computed, effect, signal } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { User } from './auth.model';
 
 const USER_STORAGE_KEY = 'auth_user';
 
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthStore {
+
   user = signal<User | null>(this.loadUser());
 
   isAuthenticated = computed(() => !!this.user());
@@ -25,6 +30,7 @@ export class AuthStore {
   }
 
   logout() {
+    localStorage.clear();
     this.user.set(null);
   }
 
