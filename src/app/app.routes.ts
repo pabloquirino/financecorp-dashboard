@@ -21,13 +21,19 @@ export const routes: Routes = [
     path: '',
     component: MainLayoutComponent,
     canActivate: [authGuard],
-    canActivateChild: [authGuard],  
+    canActivateChild: [authGuard],
     children: [
       {
         path: 'dashboard',
         loadComponent: () =>
           import('./features/dashboard/dashboard.component')
             .then(m => m.DashboardComponent)
+      },
+      {
+        path: 'users',
+        loadChildren: () =>
+          import('./features/users/users.routes')
+            .then(m => m.USERS_ROUTES)
       }
     ]
   },

@@ -9,14 +9,12 @@ export const roleGuard: CanActivateFn = (route: ActivatedRouteSnapshot) => {
   const requiredRole = route.data['role'] as 'ADMIN' | 'USER';
 
   if (!authStore.isAuthenticated()) {
-    router.navigate(['/login']);
-    return false;
+    return router.createUrlTree(['/login']);
   }
 
   if (authStore.role() === requiredRole) {
     return true;
   }
 
-  router.navigate(['/dashboard']);
-  return false;
+  return router.createUrlTree(['/dashboard']);
 };
