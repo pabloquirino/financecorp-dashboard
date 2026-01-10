@@ -1,0 +1,15 @@
+<h2>Users</h2>
+
+<ng-container *ngIf="users$ | async as state">
+
+  <p *ngIf="state.error" class="error">
+    {{ state.error }}
+  </p>
+
+  <ul *ngIf="state.data">
+    <li *ngFor="let user of state.data">
+      {{ user.name }} — {{ user.role }}
+    </li>
+  </ul>
+
+</ng-container>
